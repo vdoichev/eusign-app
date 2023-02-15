@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {EndUser, EndUserConstants} from "euscp";
-import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-root',
@@ -14,10 +13,10 @@ export class AppComponent {
   euSettings = {
     language: "uk",
     encoding: "utf-8",
-    httpProxyServiceURL: "Server/ProxyHandler.php",
+    httpProxyServiceURL: "ProxyHandler",
     directAccess: true,
-    CAs: "src/assets/Data/CAs.json",
-    CACertificates: "Data/CACertificates.p7b",
+    CAs: "ca",
+    CACertificates: "CACertificates",
     allowedKeyMediaTypes: [
       "е.ключ ІІТ Алмаз-1К",
       "е.ключ ІІТ Кристал-1",
