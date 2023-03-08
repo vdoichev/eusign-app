@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EndUser, EndUserConstants} from "euscp";
 
 @Component({
@@ -6,7 +6,7 @@ import {EndUser, EndUserConstants} from "euscp";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'eusign-app';
 
   // Налаштування бібліотеки
@@ -15,7 +15,7 @@ export class AppComponent {
     encoding: "utf-8",
     httpProxyServiceURL: "ProxyHandler",
     directAccess: true,
-    CAs: "ca",
+    CAs: "Assets/CAs.json",
     CACertificates: "CACertificates",
     allowedKeyMediaTypes: [
       "е.ключ ІІТ Алмаз-1К",
@@ -61,7 +61,7 @@ export class AppComponent {
     return false;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log("ngOnInit головного компонента");
     this.initialize();
   }
