@@ -1,6 +1,12 @@
 import {Component} from '@angular/core';
 import {EndUser, EndUserConstants, EndUserLibraryInfoSW} from "euscp";
 import {EndUserLibraryType} from "euscp/EndUserConstants";
+import {CASettings, EndUserSettings} from "euscp/EndUserSettings";
+import {CAs} from "./ca.data";
+// @ts-ignore
+import data from "/src/assets/Data/CAs.json";
+// @ts-ignore
+import * as certificates from "/src/assets/Data/CACertificates.p7b";
 
 @Component({
   selector: 'app-root',
@@ -8,15 +14,16 @@ import {EndUserLibraryType} from "euscp/EndUserConstants";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'eusign-app';
 
   // Налаштування бібліотеки
-  euSettings = {
+  euSettings: EndUserSettings = {
     language: "uk",
     encoding: "utf-8",
     httpProxyServiceURL: "Server/ProxyHandler.php",
     directAccess: true,
-    CAs: "src/assets/Data/CAs.json",
+    CAs: data,
     CACertificates: "Data/CACertificates.p7b",
     allowedKeyMediaTypes: [
       "е.ключ ІІТ Алмаз-1К",

@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    [
+      "file-loader",
+      {
+        "name": "[hash].[ext]",
+        "extensions": ["p7b"],
+        "publicPath": "/public",
+        "outputPath": "/public",
+        "context": "",
+        "limit": 0
+      }
+    ]
+  ]
+}
